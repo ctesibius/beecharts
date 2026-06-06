@@ -9,11 +9,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/",
-        destination: "/docs/",
-        permanent: false,
-      },
-      {
         source: "/docs/area-chart",
         destination: "/docs/area-chart/static",
         permanent: true,

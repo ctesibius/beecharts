@@ -161,6 +161,7 @@ export type RadialBarPart = {
   showBackground?: boolean;
   glowingBars?: string[];
   isClickable?: boolean;
+  showLabels?: boolean;
 };
 
 export type BrushPart = { type: "brush"; id: string };
@@ -171,6 +172,7 @@ export type PieSeriesPart = {
   nameKey?: string;
   innerRadius?: number | string;
   outerRadius?: number | string;
+  showLabels?: boolean;
 };
 export type HeatmapPart = {
   type: "heatmap";

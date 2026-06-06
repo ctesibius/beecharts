@@ -126,7 +126,7 @@ interface ShowcaseItemProps {
 const ShowcaseItem = ({ name, description, url, Component }: ShowcaseItemProps) => {
   return (
     <Link href={url}>
-      <div className="bg-muted dark:bg-primary-foreground group cursor-pointer rounded-md p-1">
+      <div className="bg-muted group cursor-pointer rounded-md p-1">
         <div className="bg-background group-hover:border-primary/20 relative h-40 rounded-[5px] border duration-200">
           <Grid />
           <Component />

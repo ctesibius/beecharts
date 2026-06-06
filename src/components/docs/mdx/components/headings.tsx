@@ -24,7 +24,7 @@ export const H2 = ({ className, children, ...props }: React.ComponentProps<"h2">
     .toLowerCase();
   const label = typeof children === "string" ? children : "section";
   return (
-    <div className="group text-primary relative">
+    <div className="group text-foreground relative">
       <a
         href={`#${headingId}`}
         aria-label={`Link to section: ${label}`}
@@ -48,7 +48,7 @@ export const H2 = ({ className, children, ...props }: React.ComponentProps<"h2">
 export const H3 = ({ className, children, ...props }: React.ComponentProps<"h3">) => (
   <h3
     className={cn(
-      "font-heading text-primary mt-8 scroll-m-10 text-base font-medium tracking-tight select-none [&+p]:mt-4! *:[code]:text-xl",
+      "font-heading text-foreground mt-8 scroll-m-10 text-base font-medium tracking-tight select-none [&+p]:mt-4! *:[code]:text-xl",
       className,
     )}
     {...props}
@@ -60,7 +60,7 @@ export const H3 = ({ className, children, ...props }: React.ComponentProps<"h3">
 export const H4 = ({ className, children, ...props }: React.ComponentProps<"h4">) => (
   <h4
     className={cn(
-      "font-heading text-primary mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
+      "font-heading text-foreground mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
       className,
     )}
     {...props}
@@ -72,7 +72,7 @@ export const H4 = ({ className, children, ...props }: React.ComponentProps<"h4">
 export const H5 = ({ className, children, ...props }: React.ComponentProps<"h5">) => (
   <h5
     className={cn(
-      "text-primary mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
+      "text-foreground mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
       className,
     )}
     {...props}
@@ -84,7 +84,7 @@ export const H5 = ({ className, children, ...props }: React.ComponentProps<"h5">
 export const H6 = ({ className, children, ...props }: React.ComponentProps<"h6">) => (
   <h6
     className={cn(
-      "text-primary mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
+      "text-foreground mt-8 scroll-m-10 text-base font-medium tracking-tight select-none",
       className,
     )}
     {...props}

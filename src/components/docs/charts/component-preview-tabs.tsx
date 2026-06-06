@@ -35,7 +35,7 @@ export function ComponentPreviewTabs({
       <Tabs defaultValue="preview" className="relative w-full">
         <div
           className={cn(
-            "bg-muted dark:bg-primary-foreground flex flex-col rounded-[8px] p-1",
+            "bg-muted flex flex-col rounded-[8px] p-1",
             containerClassName,
           )}
         >

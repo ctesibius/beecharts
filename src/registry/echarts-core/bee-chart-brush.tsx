@@ -141,14 +141,14 @@ function BrushHandle({
       >
         <div
           className={cn(
-            "border-primary/40 bg-background group-hover/handle:border-primary group-hover/handle:bg-primary/10 group-active/handle:border-primary group-active/handle:bg-primary/15 relative flex h-6 w-2.5 items-center justify-center rounded-md border-2 shadow-md transition-colors",
+            "border-border bg-background group-hover/handle:border-muted-foreground group-hover/handle:bg-muted group-active/handle:border-foreground group-active/handle:bg-muted relative flex h-6 w-2.5 items-center justify-center rounded-md border-2 shadow-md transition-colors",
             isLeft ? "-left-[7px]" : "-right-[7px]",
           )}
         >
           <div className="flex flex-col gap-[3px]">
-            <div className="bg-primary/70 group-hover/handle:bg-primary h-[2px] w-[3px] rounded-full" />
-            <div className="bg-primary/70 group-hover/handle:bg-primary h-[2px] w-[3px] rounded-full" />
-            <div className="bg-primary/70 group-hover/handle:bg-primary h-[2px] w-[3px] rounded-full" />
+            <div className="bg-muted-foreground group-hover/handle:bg-foreground h-[2px] w-[3px] rounded-full" />
+            <div className="bg-muted-foreground group-hover/handle:bg-foreground h-[2px] w-[3px] rounded-full" />
+            <div className="bg-muted-foreground group-hover/handle:bg-foreground h-[2px] w-[3px] rounded-full" />
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@ export function BeeChartBrush<TData extends Record<string, unknown>>({
         />
 
         <motion.div
-          className="border-primary/35 absolute inset-y-0 cursor-grab touch-none rounded-sm border bg-primary/5 active:cursor-grabbing"
+          className="border-border absolute inset-y-0 cursor-grab touch-none rounded-sm border bg-foreground/5 active:cursor-grabbing"
           style={{ left: leftPosition, width: selectedWidth }}
           {...bind("middle")}
         />

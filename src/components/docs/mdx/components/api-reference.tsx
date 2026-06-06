@@ -85,7 +85,7 @@ export function ApiHeading({ children, className }: ApiHeadingProps) {
   return (
     <div
       className={cn(
-        "font-heading text-primary mt-8 scroll-m-10 text-base font-medium tracking-tight select-none [&+p]:mt-4!",
+        "font-heading text-foreground mt-8 scroll-m-10 text-base font-medium tracking-tight select-none [&+p]:mt-4!",
         className,
       )}
     >
@@ -99,7 +99,7 @@ export function ApiRow({ name, type, default: defaultValue, required, children }
   return (
     <tr className="border-b">
       <td className="px-4 py-2.5 align-top">
-        <span className="text-primary font-mono text-[13px] whitespace-nowrap">
+        <span className="text-foreground font-mono text-[13px] whitespace-nowrap">
           {name}
           {required && (
             <span className="text-rose-500" title="Required">

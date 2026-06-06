@@ -41,11 +41,17 @@ export function compileGaugeOption(ctx: CompileContext): EChartsOption {
         },
       },
       pointer: { show: true },
+      title: {
+        // Pin the series name below the value so the two never overlap.
+        // Gauge's default title offset sits over the dial / detail text.
+        offsetCenter: [0, "78%"],
+        fontSize: 12,
+      },
       detail: {
         valueAnimation: true,
         formatter: "{value}",
         fontSize: 20,
-        offsetCenter: [0, "20%"],
+        offsetCenter: [0, "38%"],
       },
       data: [{ value, name: ctx.config[seriesKey]?.label?.toString() ?? seriesKey }],
       itemStyle: { color },

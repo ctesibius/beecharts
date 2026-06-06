@@ -129,6 +129,7 @@ export function RadialBar({
   showBackground,
   glowingBars,
   isClickable,
+  showLabels,
 }: {
   dataKey: string;
   target?: number;
@@ -137,6 +138,7 @@ export function RadialBar({
   showBackground?: boolean;
   glowingBars?: string[];
   isClickable?: boolean;
+  showLabels?: boolean;
 }) {
   const id = usePartId();
   useRegisterPart(
@@ -151,6 +153,7 @@ export function RadialBar({
           showBackground,
           glowingBars,
           isClickable,
+          showLabels,
         },
   );
   return null;

@@ -73,14 +73,16 @@ export function Pie({
   nameKey,
   innerRadius,
   outerRadius,
+  showLabels,
 }: {
   dataKey?: string;
   nameKey?: string;
   innerRadius?: number | string;
   outerRadius?: number | string;
+  showLabels?: boolean;
 }) {
   const id = usePartId();
-  useRegisterPart({ type: "pie", id, dataKey, nameKey, innerRadius, outerRadius });
+  useRegisterPart({ type: "pie", id, dataKey, nameKey, innerRadius, outerRadius, showLabels });
   return null;
 }
 

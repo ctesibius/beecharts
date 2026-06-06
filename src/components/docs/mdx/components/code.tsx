@@ -31,7 +31,7 @@ export async function CodeBlock({
     return (
       <div
         className={cn(
-          "bg-muted dark:bg-primary-foreground rounded-[10px] p-1",
+          "bg-muted rounded-[10px] p-1",
           wrapperClassName,
         )}
       >

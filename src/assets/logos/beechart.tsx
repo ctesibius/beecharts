@@ -38,32 +38,33 @@ function BeeChartMarkPaths() {
         opacity="0.42"
       />
 
-      {/* Body */}
+      {/* Body — gold abdomen */}
       <path
         d="M24 14L35.1 20.5L35.1 31.5L24 38L12.9 31.5L12.9 20.5L24 14Z"
-        fill="currentColor"
+        fill="var(--logo-gold)"
       />
+      {/* Stripes — dark bands across the abdomen */}
       <path
         d="M16.5 22H31.5M15.5 26H32.5M16.5 30H31.5"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
-        opacity="0.2"
+        opacity="0.35"
       />
 
-      {/* Head + antennae */}
-      <circle cx="24" cy="11.5" r="4" fill="currentColor" />
+      {/* Head + antennae — primary accent */}
+      <circle cx="24" cy="11.5" r="4" fill="var(--primary)" />
       <path
         d="M21.2 9.2V5.8M26.8 9.2V5.8"
-        stroke="currentColor"
+        stroke="var(--primary)"
         strokeWidth="1.75"
         strokeLinecap="round"
       />
-      <circle cx="21.2" cy="4.8" r="1.5" fill="currentColor" />
-      <circle cx="26.8" cy="4.8" r="1.5" fill="currentColor" />
+      <circle cx="21.2" cy="4.8" r="1.5" fill="var(--primary)" />
+      <circle cx="26.8" cy="4.8" r="1.5" fill="var(--primary)" />
 
-      {/* Stinger — reinforces bee silhouette */}
-      <path d="M24 38L22 42.5H26L24 38Z" fill="currentColor" />
+      {/* Stinger — primary accent reinforces silhouette */}
+      <path d="M24 38L22 42.5H26L24 38Z" fill="var(--primary)" />
     </>
   );
 }

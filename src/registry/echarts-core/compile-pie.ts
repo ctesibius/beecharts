@@ -1,5 +1,6 @@
 import type { EChartsOption } from "echarts";
 import { applyChartUiToOption } from "./apply-chart-ui";
+import { resolveCanvasChartChrome } from "./resolve-chart-chrome";
 import type { CompileContext, PieSeriesPart } from "./parts/types";
 
 export function compilePieOption(ctx: CompileContext): EChartsOption {
@@ -19,6 +20,7 @@ export function compilePieOption(ctx: CompileContext): EChartsOption {
 
   const inner = pie?.innerRadius ?? 0;
   const outer = pie?.outerRadius ?? "70%";
+  const labelColor = resolveCanvasChartChrome(ctx.chartId).muted;
 
   const base: EChartsOption = {
     tooltip: { trigger: "item" },
@@ -27,10 +29,15 @@ export function compilePieOption(ctx: CompileContext): EChartsOption {
         type: "pie",
         radius: [inner, outer],
         data: pieData,
-        // Identify slices via the shared HTML <Legend> footer, not ECharts'
-        // built-in leader-line labels — keeps pie consistent with the other charts.
-        label: { show: false },
-        labelLine: { show: false },
+        // Slice name on a leader line by default; values still live in the
+        // tooltip and the shared HTML <Legend> footer.
+        label: {
+          show: pie?.showLabels ?? true,
+          color: labelColor,
+          fontSize: 12,
+          formatter: "{b}",
+        },
+        labelLine: { show: pie?.showLabels ?? true, length: 10, length2: 8 },
         emphasis: { itemStyle: { shadowBlur: 10 } },
       },
     ],
