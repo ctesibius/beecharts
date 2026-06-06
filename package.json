@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.12.1",
   "scripts": {
+    "postinstall": "fumadocs-mdx",
     "dev": "next dev",
     "build": "pnpm run registry:fresh && next build",
     "start": "next start",
@@ -86,6 +87,7 @@
     "shiki": "^3.20.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.4.0",
+    "ts-morph": "^26.0.0",
     "tsx": "^4.21.0",
     "vaul": "^1.1.2",
     "zod": "^4.2.1",
