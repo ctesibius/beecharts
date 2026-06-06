@@ -20,6 +20,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@beecharts": "http://localhost:3000/r/{name}.json"
+    "@beecharts": "https://beecharts.vercel.app/r/{name}.json"
   }
 }

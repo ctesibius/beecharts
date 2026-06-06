@@ -8,6 +8,30 @@ Composable React chart components powered by **Apache ECharts**, distributed as 
 
 See [PLAN.md](./PLAN.md) for the full migration checklist.
 
+## Installation
+
+Add the BeeCharts namespace to your project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@beecharts": "https://beecharts.vercel.app/r/{name}.json"
+  }
+}
+```
+
+Then add any chart (its dependencies — `@beecharts/chart`, `@beecharts/tooltip`, etc. — resolve automatically):
+
+```bash
+pnpm dlx shadcn@latest add @beecharts/radar-chart
+```
+
+Or skip the namespace config and install by direct URL:
+
+```bash
+pnpm dlx shadcn@latest add https://beecharts.vercel.app/r/radar-chart.json
+```
+
 ## v1 charts
 
 Bar, line, composed, pie, heatmap, gauge.

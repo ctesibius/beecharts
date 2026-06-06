@@ -7,7 +7,7 @@ import { blocks } from "@/registry/registry-blocks";
 import { lib } from "@/registry/registry-lib";
 
 export const registry = {
-  homepage: "https://beecharts.local",
+  homepage: "https://beecharts.vercel.app",
   name: "BeeCharts",
   items: [...ui, ...charts, ...lib, ...examples, ...blocks],
 } satisfies Registry;
