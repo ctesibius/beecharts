@@ -78,20 +78,30 @@ export function usePartRegistry() {
 /** Reads the live part map — siblings registered earlier in the same render are included. */
 export function usePartsSnapshot(): ChartPart[] {
   const { partsMapRef, version } = usePartRegistry();
-  return useMemo(
-    () => Array.from(partsMapRef.current.values()),
-    [partsMapRef, version],
-  );
+  // Intentional render-time read of the live map: parts register during render
+  // (see useRegisterPart) so a snapshot must reflect siblings added earlier this
+  // render. `version` bumps on every mutation, so the memo recomputes correctly.
+  // eslint-disable-next-line react-hooks/refs
+  return useMemo(() => Array.from(partsMapRef.current.values()), [partsMapRef, version]);
 }
 
 export function useRegisterPart(part: ChartPart) {
   const { registerSync, unregister } = usePartRegistry();
   const partRef = useRef(part);
-  partRef.current = part;
   const partKey = serializePart(part);
 
+  // Register synchronously during render so sibling parts are visible to
+  // usePartsSnapshot in the same render pass (deliberate; see that hook).
   registerSync(part);
 
+  // Keep the latest part in a ref without making it a dependency (a fresh
+  // object every render would defeat the partKey gating). Written post-render.
+  useLayoutEffect(() => {
+    partRef.current = part;
+  });
+
+  // Re-register only when the part's structural identity (partKey) changes,
+  // using the latest captured part.
   useLayoutEffect(() => {
     registerSync(partRef.current);
   }, [partKey, registerSync]);

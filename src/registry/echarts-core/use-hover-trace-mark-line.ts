@@ -83,14 +83,18 @@ export function useHoverTraceMarkLine({
   chartInstanceEpoch: number;
   colorEpoch: number;
 }) {
+  // Latest-value mirrors read inside the rAF callback below. Written in an
+  // effect (not during render) so the async closure always sees fresh props.
   const hoveredIndexRef = useRef(hoveredIndex);
-  hoveredIndexRef.current = hoveredIndex;
   const rowsRef = useRef(rows);
-  rowsRef.current = rows;
   const chartIdRef = useRef(chartId);
-  chartIdRef.current = chartId;
   const dataKeyRef = useRef(dataKey);
-  dataKeyRef.current = dataKey;
+  useEffect(() => {
+    hoveredIndexRef.current = hoveredIndex;
+    rowsRef.current = rows;
+    chartIdRef.current = chartId;
+    dataKeyRef.current = dataKey;
+  });
   const traceShownRef = useRef(false);
 
   const rafRef = useRef(0);

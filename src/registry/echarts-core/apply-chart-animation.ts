@@ -30,7 +30,9 @@ function seriesIntroAnimation(series: SeriesLike, seriesIndex: number): SeriesLi
   const type = series.type;
   // ECharts bar/gauge series only animate when `animation: true` is set on the series
   // (root-level animation is ignored by SeriesModel.isAnimationEnabled()).
-  const base = { ...series, animation: true };
+  // Annotate as SeriesLike so the `Record<string, unknown>` index signature is kept —
+  // an object-literal spread would otherwise drop it and hide props like `silent`/`name`.
+  const base: SeriesLike = { ...series, animation: true };
 
   switch (type) {
     case "bar": {

@@ -100,8 +100,11 @@ export function useBeeEcharts(
   const introTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pendingOptionRef = useRef<EChartsOption | null>(null);
   const structureKeyRef = useRef("");
+  // Latest event handlers, read by ECharts listeners; written post-render.
   const eventHandlersRef = useRef(eventHandlers);
-  eventHandlersRef.current = eventHandlers;
+  useEffect(() => {
+    eventHandlersRef.current = eventHandlers;
+  });
 
   const clearIntroTimer = () => {
     if (introTimerRef.current != null) {

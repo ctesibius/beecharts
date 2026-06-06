@@ -67,8 +67,11 @@ export function useMonospaceFoldAnimation({
   const scalesRef = useRef<number[]>([]);
   const targetsRef = useRef<number[]>([]);
   const hoveredRef = useRef<number | null>(null);
+  // Latest rows, read inside the rAF loop; written post-render.
   const rowsRef = useRef(rows);
-  rowsRef.current = rows;
+  useEffect(() => {
+    rowsRef.current = rows;
+  });
   const rafRef = useRef(0);
   const lastFrameRef = useRef(0);
 

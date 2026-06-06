@@ -94,8 +94,11 @@ function BarChartCanvas<TData extends Record<string, unknown>>({
   }, []);
   const [monospaceHoveredIndex, setMonospaceHoveredIndex] = useState<number | null>(null);
   const [hoverTraceIndex, setHoverTraceIndex] = useState<number | null>(null);
+  // Latest callback, invoked from timers/ECharts events; written post-render.
   const onHoverTraceChangeRef = useRef(onHoverTraceChange);
-  onHoverTraceChangeRef.current = onHoverTraceChange;
+  useEffect(() => {
+    onHoverTraceChangeRef.current = onHoverTraceChange;
+  });
   const hoverTraceHideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const monospaceCollapsed = useMonospaceCollapse(data, chartReadyEpoch);
 
@@ -114,9 +117,21 @@ function BarChartCanvas<TData extends Record<string, unknown>>({
     }, 48);
   }, [clearHoverTraceHideTimer]);
 
-  useEffect(() => {
+  // Reset transient hover state when the dataset changes, using React's
+  // documented "adjust state on prop change" pattern (compare a prev-value ref
+  // during render). This is the recommended alternative to a setState-in-effect;
+  // the lint rule doesn't recognize the prev-value idiom, hence the scoped disable.
+  /* eslint-disable react-hooks/refs */
+  const prevDataRef = useRef(data);
+  if (prevDataRef.current !== data) {
+    prevDataRef.current = data;
     setMonospaceHoveredIndex(null);
     setHoverTraceIndex(null);
+  }
+  /* eslint-enable react-hooks/refs */
+
+  // The side effects (notify parent, clear pending hide timer) stay in an effect.
+  useEffect(() => {
     onHoverTraceChangeRef.current?.(null);
     clearHoverTraceHideTimer();
   }, [data, clearHoverTraceHideTimer]);

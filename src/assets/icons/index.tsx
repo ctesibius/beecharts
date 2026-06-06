@@ -2,12 +2,12 @@ import { IconProps } from "@/types/svg";
 
 export function AddMagicIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -37,12 +37,12 @@ export function AddMagicIcon({
 
 export function ChartStackedAreaIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -69,12 +69,12 @@ export function ChartStackedAreaIcon({
 
 export function ChartStackedLineIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -109,12 +109,12 @@ export function ChartStackedLineIcon({
 
 export function BarChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -149,12 +149,12 @@ export function BarChartIcon({
 
 export function ComposedChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -185,12 +185,12 @@ export function ComposedChartIcon({
 
 export function PieChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -222,12 +222,12 @@ export function PieChartIcon({
 
 export function RadialChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -262,12 +262,12 @@ export function RadialChartIcon({
 
 export function RadarChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -326,12 +326,12 @@ export function SankeyChartIcon({
 
 export function ScatterChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -356,12 +356,12 @@ export function ScatterChartIcon({
 
 export function CalendarChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   const cells = [
     { x: 1.25, y: 4.5, opacity: 0.2 },
@@ -409,12 +409,12 @@ export function CalendarChartIcon({
 
 export function HeatmapChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   const cells = [
     { x: 1.5, y: 1.5, opacity: 0.25 },
@@ -456,12 +456,12 @@ export function HeatmapChartIcon({
 
 export function TreemapChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -484,12 +484,12 @@ export function TreemapChartIcon({
 
 export function FunnelChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -510,12 +510,12 @@ export function FunnelChartIcon({
 
 export function WaterfallChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -538,12 +538,12 @@ export function WaterfallChartIcon({
 
 export function SparklineChartIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -577,12 +577,12 @@ export function SparklineChartIcon({
 
 export function ShapesIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -617,12 +617,12 @@ export function ShapesIcon({
 
 export function HouseIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -649,12 +649,12 @@ export function HouseIcon({
 
 export function HistoryIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -683,12 +683,12 @@ export function HistoryIcon({
 
 export function SquareAddonIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -729,12 +729,12 @@ export function SquareAddonIcon({
 
 export function BookIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -797,12 +797,12 @@ export function GithubIcon({
 
 export function MoonIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -825,12 +825,12 @@ export function MoonIcon({
 
 export function SunIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -884,12 +884,12 @@ export function SunIcon({
 
 export function SidebarLeft({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -916,12 +916,12 @@ export function SidebarLeft({
 
 export function ThumbsUpIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -948,12 +948,12 @@ export function ThumbsUpIcon({
 
 export function ThumbsDownIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -980,12 +980,12 @@ export function ThumbsDownIcon({
 
 export function CopyIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1156,12 +1156,12 @@ export function PnpmIcon({
 
 export function InfoIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1200,12 +1200,12 @@ export function InfoIcon({
 
 export function WarningIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1244,12 +1244,12 @@ export function WarningIcon({
 
 export function AlertIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1288,12 +1288,12 @@ export function AlertIcon({
 
 export function CheckboxCheckedIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1332,12 +1332,12 @@ export function CheckboxCheckedIcon({
 
 export function BackgroundIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1382,12 +1382,12 @@ export function BackgroundIcon({
 
 export function TooltipIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1420,12 +1420,12 @@ export function TooltipIcon({
 
 export function ChartLegendIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg
@@ -1470,12 +1470,12 @@ export function ChartLegendIcon({
 
 export function ChartConfigIcon({
   fill = "currentColor",
-  secondaryfill,
+  secondaryfill: secondaryfillProp,
   width = "1em",
   height = "1em",
   ...props
 }: IconProps) {
-  secondaryfill = secondaryfill || fill;
+  const secondaryfill = secondaryfillProp || fill;
 
   return (
     <svg

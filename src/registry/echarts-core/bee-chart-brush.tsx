@@ -10,7 +10,7 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { extractCategoryBoundaryGap, extractGridInsets, indexToPlotPercent, type ChartPlotInsets } from "./chart-grid";
 import { EChartsHost } from "./echarts-host";
 import { toMiniPreviewOption } from "./to-mini-preview-option";
@@ -213,11 +213,22 @@ export function BeeChartBrush<TData extends Record<string, unknown>>({
   });
   const lastCommittedRef = useRef(internalRange);
 
-  useEffect(() => {
+  // Sync internal range when the controlled start/end props change, using
+  // React's documented "adjust state on prop change" pattern (prev-value ref
+  // compared during render) — preferred over a setState-in-effect. The lint
+  // rule doesn't recognize this idiom, so the prev-value ref access is disabled.
+  /* eslint-disable react-hooks/refs */
+  const prevRangePropsRef = useRef({ startIndex, endIndex });
+  if (
+    prevRangePropsRef.current.startIndex !== startIndex ||
+    prevRangePropsRef.current.endIndex !== endIndex
+  ) {
     const synced = { startIndex, endIndex };
+    prevRangePropsRef.current = synced;
     setInternalRange(synced);
     lastCommittedRef.current = synced;
-  }, [startIndex, endIndex]);
+  }
+  /* eslint-enable react-hooks/refs */
 
   const clampRange = useCallback(
     (range: ChartBrushRange, mode?: DragType): ChartBrushRange => {
