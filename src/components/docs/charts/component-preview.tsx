@@ -34,7 +34,7 @@ export function ComponentPreview({
         not found in registry. Contact the developer to add it.{" "}
         <a
           target="_blank"
-          href="https://github.com/legions-developer/becocharts/issues"
+          href="https://github.com/ctesibius/beecharts/issues"
           className="text-primary hover:underline"
         >
           open an issue

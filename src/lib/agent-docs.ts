@@ -143,7 +143,7 @@ export function getAgentSkillsIndex() {
     $schema: "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
     skills: [
       {
-        name: "becocharts",
+        name: "beecharts",
         type: "skill-md",
         description: "Add and customize BeeCharts chart components (ECharts engine).",
         url: "/.well-known/agent-skills/beecharts/SKILL.md",

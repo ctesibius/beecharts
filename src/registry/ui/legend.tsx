@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { getColorsCount, useChart, type ChartConfig } from "@/registry/ui/chart";
+import { getColorsCount, useChart } from "@/registry/ui/chart";
 import { usePartsSnapshot } from "@/registry/echarts-core/part-registry";
 import type { ChartPart } from "@/registry/echarts-core/parts/types";
 import type { CSSProperties } from "react";

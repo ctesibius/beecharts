@@ -1,14 +1,14 @@
-# Becocharts — BeeCharts → ECharts migration plan
+# BeeCharts — BeeCharts → ECharts migration plan
 
 ## Goal
 
-Create a new repo at [`/Users/bnguyen/Desktop/Github/becocharts`](/Users/bnguyen/Desktop/Github/becocharts) with a standalone markdown plan you can open in a **separate workspace**, then execute by **copying** [beecharts](/Users/bnguyen/Desktop/Github/beecharts) and systematically **replacing Recharts with ECharts** while preserving:
+Create a new repo at [`/Users/bnguyen/Desktop/Github/beecharts`](/Users/bnguyen/Desktop/Github/beecharts) with a standalone markdown plan you can open in a **separate workspace**, then execute by **copying** [beecharts](/Users/bnguyen/Desktop/Github/beecharts) and systematically **replacing Recharts with ECharts** while preserving:
 
 - **Compound public API** (`<BeeBarChart><Grid /><Bar /></BeeBarChart>` — namespaced rename from `Bee*` to `Bee*` or keep `Bee*` initially; recommend `Bee*` for brand clarity)
 - **`ChartConfig` + CSS design tokens** ([`src/registry/ui/chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/ui/chart.tsx) `--color-{key}-{i}` on `[data-chart]`)
 - **`chart-recipes`** ([`src/registry/lib/chart-recipes.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/lib/chart-recipes.ts))
 - **Registry / shadcn CLI** pattern ([`components.json`](/Users/bnguyen/Desktop/Github/beecharts/components.json), [`src/registry/index.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/index.ts))
-- **Docs + agent skills** (`.agents/skills/beecharts/` → `becocharts/`)
+- **Docs + agent skills** (`.agents/skills/beecharts/` → `beecharts/`)
 
 **v1 chart scope (your choice):** bar, line, composed, pie, heatmap, gauge — defer radial full, radar, scatter, sankey, treemap, waterfall, funnel, sparkline to v2.
 
@@ -17,16 +17,16 @@ Create a new repo at [`/Users/bnguyen/Desktop/Github/becocharts`](/Users/bnguyen
 ## Phase 0 — Bootstrap folder and plan file (first action in new workspace)
 
 ```bash
-mkdir -p /Users/bnguyen/Desktop/Github/becocharts
+mkdir -p /Users/bnguyen/Desktop/Github/beecharts
 ```
 
 Copy this plan into:
 
-**`/Users/bnguyen/Desktop/Github/becocharts/PLAN.md`**
+**`/Users/bnguyen/Desktop/Github/beecharts/PLAN.md`**
 
 Also add minimal repo skeleton:
 
-- `README.md` — one paragraph: Becocharts = BeeCharts UX on ECharts
+- `README.md` — one paragraph: BeeCharts = BeeCharts UX on ECharts
 - `.gitignore` — copy from beecharts
 - `LICENSE` — match beecharts if forked
 
@@ -34,21 +34,21 @@ Do **not** copy `node_modules` or `.next` when cloning.
 
 ---
 
-## Phase 1 — Fork beecharts → becocharts
+## Phase 1 — Fork beecharts → beecharts
 
 ```bash
 cd /Users/bnguyen/Desktop/Github
 rsync -a --exclude node_modules --exclude .next --exclude .git \
-  beecharts/ becocharts/
-cd becocharts && git init
+  beecharts/ beecharts/
+cd beecharts && git init
 ```
 
 ### Global rename checklist
 
 | Area | From | To |
 |------|------|-----|
-| package name | `beecharts` | `becocharts` |
-| Registry namespace | `@beecharts/*` | `@beecharts/*` (or `@becocharts/*`) |
+| package name | `beecharts` | `beecharts` |
+| Registry namespace | `@beecharts/*` | `@beecharts/*` (or `@beecharts/*`) |
 | Site / homepage | `beecharts.com` | TBD local dev URL |
 | Component prefix | `Bee*` | `Bee*` (recommended) |
 | Paths | `components/beecharts/` | `components/beecharts/` |
@@ -81,7 +81,7 @@ flowchart TB
     Root --> Bar
   end
 
-  subgraph engine [Becocharts engine]
+  subgraph engine [BeeCharts engine]
     Ctx[BeeChartContext]
     Registry[PartRegistry]
     Compiler[buildEChartsOption]
@@ -226,8 +226,8 @@ function Bar({ dataKey, variant, ... }) {
 
 ## Execution order (checklist for PLAN.md)
 
-1. Create `becocharts/` + `PLAN.md`
-2. `rsync` beecharts → becocharts, `git init`
+1. Create `beecharts/` + `PLAN.md`
+2. `rsync` beecharts → beecharts, `git init`
 3. Rename packages/registry/branding
 4. Add `echarts-core` + swap `ChartContainer`
 5. Implement bar compiler + verify `ex-bar-chart`

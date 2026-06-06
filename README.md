@@ -1,6 +1,6 @@
-# Becocharts
+# BeeCharts
 
-Fork of [BeeCharts](https://github.com/legions-developer/becocharts) with **Apache ECharts** as the render engine instead of Recharts.
+Composable React chart components powered by **Apache ECharts**, distributed as a shadcn-compatible registry. A re-imagining of the [evilcharts](https://github.com/ali-tas/evilcharts) UX with ECharts as the render engine instead of Recharts.
 
 - Compound component API (`BeeBarChart`, `<Bar />`, `<Grid />`, …)
 - `ChartConfig` design tokens (light/dark CSS variables on `[data-chart]`)
