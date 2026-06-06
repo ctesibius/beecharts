@@ -15,7 +15,7 @@ export const MDXNavigation = ({ type, title, url, description }: MDXNavigationPr
     <Link href={url}>
       <div
         className={cn(
-          "bg-muted dark:bg-primary-foreground group text-muted-foreground flex cursor-pointer rounded-md p-[2px]",
+          "bg-muted group text-muted-foreground flex cursor-pointer rounded-md p-[2px]",
           type === "previous" ? "flex-row-reverse" : "flex-row",
         )}
       >

@@ -9,11 +9,11 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-primary bg-muted dark:bg-primary-foreground",
-        warning: "text-amber-500 dark:bg-primary-foreground bg-amber-500/10",
-        info: "text-blue-500 dark:bg-primary-foreground bg-blue-500/10",
-        error: "text-red-500 dark:bg-primary-foreground bg-red-500/10",
-        success: "text-green-500 dark:bg-primary-foreground bg-green-500/10",
+        default: "text-foreground bg-muted",
+        warning: "text-amber-500 bg-amber-500/10",
+        info: "text-blue-500 bg-blue-500/10",
+        error: "text-red-500 bg-red-500/10",
+        success: "text-green-500 bg-green-500/10",
       },
     },
     defaultVariants: {

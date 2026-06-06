@@ -18,7 +18,7 @@ const DocsHeader = async () => {
           <>
             <Link href="https://github.com/ctesibius/beecharts" target="_blank">
               <Button variant="link" size="sm">
-                <GithubIcon /> <span className="text-primary text-xs">{stars}</span>
+                <GithubIcon /> <span className="text-foreground text-xs">{stars}</span>
               </Button>
             </Link>
             <span className="text-muted">|</span>

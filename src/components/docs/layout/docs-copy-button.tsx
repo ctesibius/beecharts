@@ -151,7 +151,7 @@ export function DocsCopyPage({ mdx, url }: { mdx: string; url: string }) {
 
   return (
     <Popover>
-      <div className="bg-muted dark:bg-primary-foreground group/buttons relative flex rounded-lg p-[2px] select-none *:data-[slot=button]:focus-visible:relative *:data-[slot=button]:focus-visible:z-10">
+      <div className="bg-muted group/buttons relative flex rounded-lg p-[2px] select-none *:data-[slot=button]:focus-visible:relative *:data-[slot=button]:focus-visible:z-10">
         <PopoverAnchor />
         <Button
           aria-label="Copy page"

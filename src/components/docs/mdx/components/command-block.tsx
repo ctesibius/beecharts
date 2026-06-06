@@ -28,7 +28,7 @@ function CommandBlock({ commands }: CommandBlockProps) {
       value={packageManager}
       onValueChange={(value) => setConfig({ packageManager: value as PackageManager })}
     >
-      <div className="bg-muted dark:bg-primary-foreground group mt-2 flex flex-col rounded-[8px] p-1">
+      <div className="bg-muted group mt-2 flex flex-col rounded-[8px] p-1">
         <div className="flex flex-row items-center justify-between pr-1 pl-2">
           <TabsList
             variant="underline"

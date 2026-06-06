@@ -72,6 +72,8 @@ export function compileRadialBarOption(ctx: CompileContext): EChartsOption {
   const numericValues = ctx.data.map((row) => Number(row[valueKey] ?? 0));
   const angleMax = Math.max(...numericValues, 1);
 
+  const showLabels = radial?.showLabels ?? true;
+
   const seriesData = ctx.data.map((row, i) => {
     const configKey = configKeyFromRow(row, nameKey);
     const color = itemColor(configKey, ctx);
@@ -113,9 +115,23 @@ export function compileRadialBarOption(ctx: CompileContext): EChartsOption {
     radiusAxis: {
       type: "category",
       data: categories,
+      // Draw labels above the arcs and halo each glyph with the chart
+      // background so the ring name stays legible whether it sits over a
+      // coloured arc, the muted track, or an empty gap.
+      z: 10,
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { show: false },
+      axisLabel: {
+        show: showLabels,
+        // Show every ring name — a category axis otherwise auto-thins labels
+        // it thinks collide, which is why only a couple appeared.
+        interval: 0,
+        color: chrome.foreground,
+        fontSize: 11,
+        fontWeight: 500,
+        textBorderColor: chrome.background,
+        textBorderWidth: 3,
+      },
       splitLine: { show: false },
     },
     series: [
@@ -131,6 +147,7 @@ export function compileRadialBarOption(ctx: CompileContext): EChartsOption {
           opacity: 0.35,
           borderRadius: cornerRadius,
         },
+        label: { show: false },
         emphasis: {
           focus: "self",
           itemStyle: {
@@ -203,7 +220,12 @@ export function compileRoseBarOption(ctx: CompileContext): EChartsOption {
       clockwise: true,
       axisLine: { show: false },
       axisTick: { show: false },
-      axisLabel: { show: false },
+      // Name each petal by default; opt out with <RadialBar showLabels={false} />.
+      axisLabel: {
+        show: radial?.showLabels ?? true,
+        color: chrome.muted,
+        fontSize: 11,
+      },
       splitLine: { show: false },
     },
     radiusAxis: {

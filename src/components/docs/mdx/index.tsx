@@ -63,7 +63,7 @@ export const mdxComponents: MDXComponents = {
   ),
   pre: ({ className, children, ...props }: React.ComponentProps<"pre">) => {
     return (
-      <div className="bg-muted dark:bg-primary-foreground group relative mt-4 rounded-[8px] p-1">
+      <div className="bg-muted group relative mt-4 rounded-[8px] p-1">
         <pre
           className={cn(
             "no-scrollbar bg-background min-w-0 overflow-x-auto rounded-sm border py-3.5 text-[.8125rem] outline-none has-data-highlighted-line:px-0 has-data-line-numbers:px-0 has-data-[slot=tabs]:p-0 [&>code]:px-0!",
