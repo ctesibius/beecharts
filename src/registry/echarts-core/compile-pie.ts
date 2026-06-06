@@ -27,6 +27,10 @@ export function compilePieOption(ctx: CompileContext): EChartsOption {
         type: "pie",
         radius: [inner, outer],
         data: pieData,
+        // Identify slices via the shared HTML <Legend> footer, not ECharts'
+        // built-in leader-line labels — keeps pie consistent with the other charts.
+        label: { show: false },
+        labelLine: { show: false },
         emphasis: { itemStyle: { shadowBlur: 10 } },
       },
     ],
