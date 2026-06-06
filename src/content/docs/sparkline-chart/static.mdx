@@ -18,7 +18,7 @@ links:
     <TabsTab value="manual">Manual</TabsTab>
   </TabsList>
   <TabsPanel value="cli">
-    <CliBlock commands={["@evilcharts/sparkline-chart"]} />
+    <CliBlock commands={["@beecharts/sparkline-chart"]} />
   </TabsPanel>
   <TabsPanel value="manual">
     <Steps>
@@ -31,7 +31,7 @@ links:
       <Step>
         <StepTitle>Copy and paste the following code snippets into your project.</StepTitle>
          <StepDescription>
-          To use the chart, first create the folder `evilcharts` and a subfolder called `charts` inside your `components` directory.
+          To use the chart, first create the folder `beecharts` and a subfolder called `charts` inside your `components` directory.
           Then, copy the following base sparkline-chart code into a new file in that folder.
         </StepDescription>
         <StepContent>
@@ -44,7 +44,7 @@ links:
        <Step>
         <StepTitle>Now, Let's add the chart component to your project.</StepTitle>
         <StepDescription>
-          These Components are required by the chart component to render the chart. Make a folder called `ui` inside the `evilcharts` folder and paste the code there.
+          These Components are required by the chart component to render the chart. Make a folder called `ui` inside the `beecharts` folder and paste the code there.
 
           Below is main chart component.
         </StepDescription>
@@ -58,7 +58,7 @@ links:
        <Step>
         <StepTitle>Now, We need to add sub components.</StepTitle>
         <StepDescription>
-          Create a file called `tooltip.tsx` inside the `evilcharts/ui` folder and paste the code there.
+          Create a file called `tooltip.tsx` inside the `beecharts/ui` folder and paste the code there.
         </StepDescription>
         <StepContent>
           <ComponentSource
@@ -67,7 +67,7 @@ links:
           />
         </StepContent>
         <StepDescription>
-          Create `dot.tsx` inside the `evilcharts/ui` folder and paste the code there.
+          Create `dot.tsx` inside the `beecharts/ui` folder and paste the code there.
         </StepDescription>
         <StepContent>
           <ComponentSource
@@ -76,7 +76,7 @@ links:
           />
         </StepContent>
         <StepDescription>
-          For background patterns, create `background.tsx` in `evilcharts/ui` as well.
+          For background patterns, create `background.tsx` in `beecharts/ui` as well.
         </StepDescription>
         <StepContent>
           <ComponentSource
@@ -243,7 +243,7 @@ Configuration slot — renders a `<ChartDot />` on the **last** point only when 
 
 <ApiTable>
   <ApiRow name="variant" type="DotVariant">
-    Dot style forwarded to `@evilcharts/dot`.
+    Dot style forwarded to `@beecharts/dot`.
   </ApiRow>
 </ApiTable>
 

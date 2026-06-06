@@ -24,7 +24,7 @@
 |------|------|---------|
 | chart-recipes | `lib/chart-recipes.ts` | `binForHistogram`, `prepareParetoData`, `prepareBulletRow`, `prepareHeatmapCells`, `prepareBoxPlotRow`, `normalizeGaugeValue`, `prepareGaugeRows` |
 
-CLI: `@evilcharts/chart-recipes` — doc `/docs/chart-recipes`
+CLI: `@beecharts/chart-recipes` — doc `/docs/chart-recipes`
 
 ## Example placement (single doc per primitive)
 

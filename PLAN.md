@@ -1,14 +1,14 @@
-# Becocharts — EvilCharts → ECharts migration plan
+# Becocharts — BeeCharts → ECharts migration plan
 
 ## Goal
 
-Create a new repo at [`/Users/bnguyen/Desktop/Github/becocharts`](/Users/bnguyen/Desktop/Github/becocharts) with a standalone markdown plan you can open in a **separate workspace**, then execute by **copying** [evilcharts](/Users/bnguyen/Desktop/Github/evilcharts) and systematically **replacing Recharts with ECharts** while preserving:
+Create a new repo at [`/Users/bnguyen/Desktop/Github/becocharts`](/Users/bnguyen/Desktop/Github/becocharts) with a standalone markdown plan you can open in a **separate workspace**, then execute by **copying** [beecharts](/Users/bnguyen/Desktop/Github/beecharts) and systematically **replacing Recharts with ECharts** while preserving:
 
-- **Compound public API** (`<BeeBarChart><Grid /><Bar /></BeeBarChart>` — namespaced rename from `Evil*` to `Bee*` or keep `Evil*` initially; recommend `Bee*` for brand clarity)
-- **`ChartConfig` + CSS design tokens** ([`src/registry/ui/chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/ui/chart.tsx) `--color-{key}-{i}` on `[data-chart]`)
-- **`chart-recipes`** ([`src/registry/lib/chart-recipes.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/lib/chart-recipes.ts))
-- **Registry / shadcn CLI** pattern ([`components.json`](/Users/bnguyen/Desktop/Github/evilcharts/components.json), [`src/registry/index.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/index.ts))
-- **Docs + agent skills** (`.agents/skills/evilcharts/` → `becocharts/`)
+- **Compound public API** (`<BeeBarChart><Grid /><Bar /></BeeBarChart>` — namespaced rename from `Bee*` to `Bee*` or keep `Bee*` initially; recommend `Bee*` for brand clarity)
+- **`ChartConfig` + CSS design tokens** ([`src/registry/ui/chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/ui/chart.tsx) `--color-{key}-{i}` on `[data-chart]`)
+- **`chart-recipes`** ([`src/registry/lib/chart-recipes.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/lib/chart-recipes.ts))
+- **Registry / shadcn CLI** pattern ([`components.json`](/Users/bnguyen/Desktop/Github/beecharts/components.json), [`src/registry/index.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/index.ts))
+- **Docs + agent skills** (`.agents/skills/beecharts/` → `becocharts/`)
 
 **v1 chart scope (your choice):** bar, line, composed, pie, heatmap, gauge — defer radial full, radar, scatter, sankey, treemap, waterfall, funnel, sparkline to v2.
 
@@ -26,20 +26,20 @@ Copy this plan into:
 
 Also add minimal repo skeleton:
 
-- `README.md` — one paragraph: Becocharts = EvilCharts UX on ECharts
-- `.gitignore` — copy from evilcharts
-- `LICENSE` — match evilcharts if forked
+- `README.md` — one paragraph: Becocharts = BeeCharts UX on ECharts
+- `.gitignore` — copy from beecharts
+- `LICENSE` — match beecharts if forked
 
 Do **not** copy `node_modules` or `.next` when cloning.
 
 ---
 
-## Phase 1 — Fork evilcharts → becocharts
+## Phase 1 — Fork beecharts → becocharts
 
 ```bash
 cd /Users/bnguyen/Desktop/Github
 rsync -a --exclude node_modules --exclude .next --exclude .git \
-  evilcharts/ becocharts/
+  beecharts/ becocharts/
 cd becocharts && git init
 ```
 
@@ -47,20 +47,20 @@ cd becocharts && git init
 
 | Area | From | To |
 |------|------|-----|
-| package name | `evilcharts` | `becocharts` |
-| Registry namespace | `@evilcharts/*` | `@beecharts/*` (or `@becocharts/*`) |
-| Site / homepage | `evilcharts.com` | TBD local dev URL |
-| Component prefix | `Evil*` | `Bee*` (recommended) |
-| Paths | `components/evilcharts/` | `components/beecharts/` |
-| Skills | `.agents/skills/evilcharts*` | `.agents/skills/beecharts*` |
-| Logo/assets | `evilchart` | `beechart` (optional v1) |
+| package name | `beecharts` | `becocharts` |
+| Registry namespace | `@beecharts/*` | `@beecharts/*` (or `@becocharts/*`) |
+| Site / homepage | `beecharts.com` | TBD local dev URL |
+| Component prefix | `Bee*` | `Bee*` (recommended) |
+| Paths | `components/beecharts/` | `components/beecharts/` |
+| Skills | `.agents/skills/beecharts*` | `.agents/skills/beecharts*` |
+| Logo/assets | `beechart` | `beechart` (optional v1) |
 
 Files to touch in bulk:
 
-- [`package.json`](/Users/bnguyen/Desktop/Github/evilcharts/package.json) — remove `recharts`, add `echarts` + `echarts-for-react` (or thin `useECharts` hook)
-- [`components.json`](/Users/bnguyen/Desktop/Github/evilcharts/components.json) — `registries.@beecharts`
-- [`src/registry/registry-chart.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/registry-chart.ts) — descriptions, deps `echarts` not `recharts`
-- [`src/scripts/build-registry.mts`](/Users/bnguyen/Desktop/Github/evilcharts/src/scripts/build-registry.mts) — unchanged flow
+- [`package.json`](/Users/bnguyen/Desktop/Github/beecharts/package.json) — remove `recharts`, add `echarts` + `echarts-for-react` (or thin `useECharts` hook)
+- [`components.json`](/Users/bnguyen/Desktop/Github/beecharts/components.json) — `registries.@beecharts`
+- [`src/registry/registry-chart.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/registry-chart.ts) — descriptions, deps `echarts` not `recharts`
+- [`src/scripts/build-registry.mts`](/Users/bnguyen/Desktop/Github/beecharts/src/scripts/build-registry.mts) — unchanged flow
 - All MDX/docs/skills string replacements
 
 **Keep unchanged initially:** `src/content/docs/**` structure, example file names (`ex-bar-chart`), `chart-recipes.ts` logic.
@@ -107,7 +107,7 @@ flowchart TB
 | `compile-bar.ts` / `compile-line.ts` / … | Per-chart compilers merging parts into `EChartsOption` |
 | `parts/types.ts` | Discriminated union: `xAxis`, `yAxis`, `grid`, `barSeries`, `lineSeries`, `pieSeries`, `heatmap`, `gauge` |
 
-### Adapt [`src/registry/ui/chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/ui/chart.tsx)
+### Adapt [`src/registry/ui/chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/ui/chart.tsx)
 
 - **Keep:** `ChartConfig`, `ChartStyle`, `validateChartConfigColors`, `LoadingIndicator`, `getLoadingData`
 - **Replace:** `RechartsPrimitive.ResponsiveContainer` → div ref + `min-h-0 flex-1` for ECharts mount point
@@ -138,13 +138,13 @@ function Bar({ dataKey, variant, ... }) {
 }
 ```
 
-**v1 simplification:** motion grow-in, `EvilBrush`, and complex custom `shape` paths can be **stubs** (document as v2) if they block MVP; keep props on components for API compatibility but no-op where ECharts differs.
+**v1 simplification:** motion grow-in, `BeeBrush`, and complex custom `shape` paths can be **stubs** (document as v2) if they block MVP; keep props on components for API compatibility but no-op where ECharts differs.
 
 ---
 
 ## Phase 3 — v1 chart port order
 
-### 3.1 Bar — [`src/registry/charts/bar-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/charts/bar-chart.tsx)
+### 3.1 Bar — [`src/registry/charts/bar-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/charts/bar-chart.tsx)
 
 - Compiler: `series: [{ type: 'bar', ... }]`, `xAxis`, `yAxis`, `grid`
 - Map `layout` horizontal ↔ `xAxis/yAxis` category vs value
@@ -152,17 +152,17 @@ function Bar({ dataKey, variant, ... }) {
 - Variants: `default` solid fill from `--color-*`; hatched/gradient v2 via `itemStyle` patterns
 - Reuse examples: `ex-bar-chart`, `ex-stacked-type-bar-chart`, `ex-horizontal-layout-bar-chart`, `ex-bullet-chart`
 
-### 3.2 Line — [`line-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/charts/line-chart.tsx)
+### 3.2 Line — [`line-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/charts/line-chart.tsx)
 
 - `series: [{ type: 'line' }]`, `smooth` / `step` from `curveType`
 - `showBrush` v2 → `dataZoom` component registration
 
-### 3.3 Composed — [`composed-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/charts/composed-chart.tsx)
+### 3.3 Composed — [`composed-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/charts/composed-chart.tsx)
 
 - Multiple registered `bar` + `line` parts → mixed series array
 - Pareto: dual `yAxis` + bar/line series (`ex-pareto-chart`)
 
-### 3.4 Pie — [`pie-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/charts/pie-chart.tsx)
+### 3.4 Pie — [`pie-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/charts/pie-chart.tsx)
 
 - `series: [{ type: 'pie', radius, data }]`
 - Donut via `innerRadius` props on `<Pie />`
@@ -170,10 +170,10 @@ function Bar({ dataKey, variant, ... }) {
 ### 3.5 Heatmap — new first-class compiler (upgrade from scatter recipe)
 
 - Native `series: [{ type: 'heatmap' }]`
-- Replace / sideline [`ex-heatmap-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/examples/ex-heatmap-chart.tsx) scatter-cell hack with ECharts heatmap
-- Add `heatmap-chart` to [`registry-chart.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/registry-chart.ts) OR keep as recipe-only on `BeeScatterChart` — **recommend dedicated `BeeHeatmapChart` in v1** since you selected heatmap for MVP
+- Replace / sideline [`ex-heatmap-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/examples/ex-heatmap-chart.tsx) scatter-cell hack with ECharts heatmap
+- Add `heatmap-chart` to [`registry-chart.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/registry-chart.ts) OR keep as recipe-only on `BeeScatterChart` — **recommend dedicated `BeeHeatmapChart` in v1** since you selected heatmap for MVP
 
-### 3.6 Gauge — [`radial-chart.tsx`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/charts/radial-chart.tsx) semi variant
+### 3.6 Gauge — [`radial-chart.tsx`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/charts/radial-chart.tsx) semi variant
 
 - ECharts `series: [{ type: 'gauge' }]`
 - **Critical:** map `nameKey` + `chartConfig` keys correctly (lesson from gauge fix: `series` field must match config keys)
@@ -185,12 +185,12 @@ function Bar({ dataKey, variant, ... }) {
 
 | Task | Files |
 |------|--------|
-| Registry items | [`registry-chart.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/registry-chart.ts), [`registry-example.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/registry-example.ts), [`registry-lib.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/registry/registry-lib.ts) |
+| Registry items | [`registry-chart.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/registry-chart.ts), [`registry-example.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/registry-example.ts), [`registry-lib.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/registry/registry-lib.ts) |
 | Build | `bun run registry:fresh` |
 | Docs | Rename references in `src/content/docs/**`; add note on ECharts engine |
 | Heatmap doc | New `heatmap-chart/static.mdx` or section under scatter → **dedicated page for MVP** |
-| Skills | Fork [`.agents/skills/evilcharts/`](/Users/bnguyen/Desktop/Github/evilcharts/.agents/skills/evilcharts) → `beecharts/` — update install (`echarts` peers), components (register/compile model), recipes |
-| LLM index | [`src/lib/llm.ts`](/Users/bnguyen/Desktop/Github/evilcharts/src/lib/llm.ts) |
+| Skills | Fork [`.agents/skills/beecharts/`](/Users/bnguyen/Desktop/Github/beecharts/.agents/skills/beecharts) → `beecharts/` — update install (`echarts` peers), components (register/compile model), recipes |
+| LLM index | [`src/lib/llm.ts`](/Users/bnguyen/Desktop/Github/beecharts/src/lib/llm.ts) |
 
 ---
 
@@ -208,7 +208,7 @@ function Bar({ dataKey, variant, ... }) {
 - True 3D / isometric blocks (port later or drop)
 - sankey, waterfall, funnel, sparkline, treemap, radar, scatter, radial-full
 - Full variant parity (hatched, glowing, animated-dashed) — stub props, implement in v2
-- `EvilBrush` / `dataZoom` parity
+- `BeeBrush` / `dataZoom` parity
 - Published npm — local registry only until stable
 
 ---
@@ -219,7 +219,7 @@ function Bar({ dataKey, variant, ... }) {
 |------|------------|
 | Compound-on-ECharts is complex | Part registry + per-chart compiler; children return null |
 | Canvas vs CSS vars | `resolve-chart-colors.ts` reads computed styles on theme change |
-| API drift from EvilCharts | Keep same child component names/props; document no-ops |
+| API drift from BeeCharts | Keep same child component names/props; document no-ops |
 | Large fork maintenance | Shared `chart-recipes` unchanged; only compilers differ |
 
 ---
@@ -227,7 +227,7 @@ function Bar({ dataKey, variant, ... }) {
 ## Execution order (checklist for PLAN.md)
 
 1. Create `becocharts/` + `PLAN.md`
-2. `rsync` evilcharts → becocharts, `git init`
+2. `rsync` beecharts → becocharts, `git init`
 3. Rename packages/registry/branding
 4. Add `echarts-core` + swap `ChartContainer`
 5. Implement bar compiler + verify `ex-bar-chart`

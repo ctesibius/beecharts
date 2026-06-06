@@ -1,4 +1,4 @@
-// Component taken from @shadcn official repo and modified by evilcharts
+// Component taken from @shadcn official repo and modified by beecharts
 
 "use client";
 

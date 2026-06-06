@@ -13,8 +13,8 @@ Thanks for your interest in contributing to BeeCharts! This guide will help you 
 
 1. Fork and clone the repository:
 ```bash
-git clone https://github.com/your-username/evilcharts.git
-cd evilcharts
+git clone https://github.com/your-username/beecharts.git
+cd beecharts
 ```
 
 2. Install dependencies:
@@ -32,7 +32,7 @@ The site will be available at `http://localhost:3000`.
 ## Project Structure
 
 ```
-evilcharts/
+beecharts/
 ├── charts/              # Chart components
 │   ├── bar-charts/      # Bar chart variants
 │   ├── line-charts/     # Line chart variants

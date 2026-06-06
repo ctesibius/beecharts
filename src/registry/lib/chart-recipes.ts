@@ -1,4 +1,4 @@
-/** Data helpers for common BI chart shapes — use with primitive Evil*Chart components. */
+/** Data helpers for common BI chart shapes — use with primitive Bee*Chart components. */
 
 const formatBin = (value: number) => {
   if (Math.abs(value) >= 1000) return `${(value / 1000).toFixed(1)}k`;

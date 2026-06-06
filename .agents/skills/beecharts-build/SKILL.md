@@ -1,20 +1,20 @@
 ---
-name: evilcharts-build
+name: beecharts-build
 description: >-
   Build and extend BeeCharts composable charts. Use when adding charts,
-  examples, or docs in evilcharts. Covers primitives only, chart-recipes data
+  examples, or docs in beecharts. Covers primitives only, chart-recipes data
   helpers, example placement on primitive doc pages, and registry wiring. Do not
-  add new Evil*Chart modules that duplicate bar, scatter, radial, or composed.
+  add new Bee*Chart modules that duplicate bar, scatter, radial, or composed.
 metadata:
-  author: evilcharts
+  author: beecharts
   version: "2.0.0"
 ---
 
 # BeeCharts — Agent build guide
 
-**Consumers** building apps with BeeCharts should use the **[evilcharts](../evilcharts/SKILL.md)** skill (when to use, install, components, recipes).
+**Consumers** building apps with BeeCharts should use the **[beecharts](../beecharts/SKILL.md)** skill (when to use, install, components, recipes).
 
-This skill is for **maintainers** of the evilcharts repository only.
+This skill is for **maintainers** of the beecharts repository only.
 
 Read **[chart-catalog.md](./chart-catalog.md)** for the chart list and example index.
 
@@ -43,7 +43,7 @@ Register lib in `registry-lib.ts`; document on `/docs/chart-recipes`.
 ## Workflow
 
 1. Add or update `src/registry/examples/ex-<feature>-<primitive>-chart.tsx` (or keep semantic names like `ex-gauge-chart` on radial).
-2. Register in `registry-example.ts` with `registryDependencies: ["@evilcharts/<primitive>-chart"]`.
+2. Register in `registry-example.ts` with `registryDependencies: ["@beecharts/<primitive>-chart"]`.
 3. Add `<ComponentPreview />` under **Examples** in the primitive’s `static.mdx`.
 4. Run `npx tsx ./src/scripts/build-registry.mts`.
 

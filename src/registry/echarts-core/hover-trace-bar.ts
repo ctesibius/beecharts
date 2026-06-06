@@ -64,7 +64,7 @@ export function hoverTraceValueAt(
   return Number(rows[index]?.[dataKey] ?? 0);
 }
 
-/** Canvas-safe hover trace — dashed line, value pill, end dot (evilcharts ReferenceLine parity). */
+/** Canvas-safe hover trace — dashed line, value pill, end dot (beecharts ReferenceLine parity). */
 export function buildHoverTraceGraphic(
   chart: EChartsType,
   categoryIndex: number,

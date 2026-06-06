@@ -1,6 +1,6 @@
 ---
 title: Waterfall Chart
-description: Bridges, deltas, and totals stacked as one composable EvilChart
+description: Bridges, deltas, and totals stacked as one composable BeeChart
 image: /og/waterfall-chart.png
 links:
   github: https://github.com/legions-developer/becocharts/blob/main/src/registry/charts/waterfall-chart.tsx
@@ -18,7 +18,7 @@ links:
     <TabsTab value="manual">Manual</TabsTab>
   </TabsList>
   <TabsPanel value="cli">
-    <CliBlock commands={["@evilcharts/waterfall-chart"]} />
+    <CliBlock commands={["@beecharts/waterfall-chart"]} />
   </TabsPanel>
   <TabsPanel value="manual">
     <Steps>
@@ -31,7 +31,7 @@ links:
       <Step>
         <StepTitle>Copy and paste the following code snippets into your project.</StepTitle>
          <StepDescription>
-          To use the chart, first create the folder `evilcharts` and a subfolder called `charts` inside your `components` directory.
+          To use the chart, first create the folder `beecharts` and a subfolder called `charts` inside your `components` directory.
           Then, copy the following base waterfall-chart code into a new file in that folder.
         </StepDescription>
         <StepContent>
@@ -44,7 +44,7 @@ links:
        <Step>
         <StepTitle>Now, Let's add the chart component to your project.</StepTitle>
         <StepDescription>
-          These Components are required by the chart component to render the chart. Make a folder called `ui` inside the `evilcharts` folder and paste the code there.
+          These Components are required by the chart component to render the chart. Make a folder called `ui` inside the `beecharts` folder and paste the code there.
 
           Below is main chart component.
         </StepDescription>
@@ -58,7 +58,7 @@ links:
        <Step>
         <StepTitle>Now, We need to add sub components.</StepTitle>
         <StepDescription>
-          Create a file called `tooltip.tsx` inside the `evilcharts/ui` folder and paste the code there.
+          Create a file called `tooltip.tsx` inside the `beecharts/ui` folder and paste the code there.
         </StepDescription>
         <StepContent>
           <ComponentSource
@@ -67,7 +67,7 @@ links:
           />
         </StepContent>
         <StepDescription>
-          Now, create another file called `legend.tsx` inside the `evilcharts/ui` folder and paste the code there.
+          Now, create another file called `legend.tsx` inside the `beecharts/ui` folder and paste the code there.
         </StepDescription>
         <StepContent>
           <ComponentSource
@@ -154,7 +154,7 @@ Set `isClickable` on `<Bars />` and `<Legend />` as needed — `onSelectionChang
 
 ### Intro animation
 
-Bars grow in on first paint with a staggered motion.dev reveal (Recharts’ built-in bar animation is disabled, same as other Evil charts). Control order with `animationType` on the root — `"left-to-right"` (default), `"right-to-left"`, `"center-out"`, `"edges-in"`, or `"none"`. Respects the OS reduce-motion preference.
+Bars grow in on first paint with a staggered motion.dev reveal (Recharts’ built-in bar animation is disabled, same as other Bee charts). Control order with `animationType` on the root — `"left-to-right"` (default), `"right-to-left"`, `"center-out"`, `"edges-in"`, or `"none"`. Respects the OS reduce-motion preference.
 
 ```tsx
 <BeeWaterfallChart animationType="center-out" ...>
@@ -306,7 +306,7 @@ Per-bridge legends mirroring clickable selection state.
     Legend marker motifs.
   </ApiRow>
   <ApiRow name="align" type='"left" | "center" | "right"' default='"right"'>
-    Horizontal alignment (Evil waterfall defaults tighter to chart gutter).
+    Horizontal alignment (Bee waterfall defaults tighter to chart gutter).
   </ApiRow>
   <ApiRow name="verticalAlign" type='"top" | "middle" | "bottom"' default='"top"'>
     Vertical stacking.

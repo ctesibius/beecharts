@@ -55,7 +55,7 @@ User goal?
 
 ## Non-negotiable patterns
 
-1. **Install chart + UI deps** — Every chart needs `@beecharts/chart` at minimum; charts pull in `tooltip`, `legend`, `dot`, `background`, `evil-brush` as needed. See [install.md](./install.md).
+1. **Install chart + UI deps** — Every chart needs `@beecharts/chart` at minimum; charts pull in `tooltip`, `legend`, `dot`, `background`, `bee-brush` as needed. See [install.md](./install.md).
 
 2. **Compose children** — Root only holds `config`, `data`, layout props. Put `<Grid />`, axes, series, `<Tooltip />`, `<Legend />` inside the root.
 
@@ -112,7 +112,7 @@ Adjust import path to match the project (`@/components/beecharts/...` after CLI 
 | `@beecharts/legend` | `ChartLegend` / `ChartLegendContent` |
 | `@beecharts/dot` | Point markers for line/scatter/radar |
 | `@beecharts/background` | `ChartBackground` / `backgroundVariant` on roots |
-| `@beecharts/evil-brush` | Zoom brush footer on bar/line/area/composed |
+| `@beecharts/bee-brush` | Zoom brush footer on bar/line/area/composed |
 
 ---
 

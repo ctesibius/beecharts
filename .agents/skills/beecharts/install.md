@@ -41,10 +41,10 @@ pnpm add echarts motion
 
 | Chart CLI | Pulls UI deps (typical) |
 |-----------|------------------------|
-| `@beecharts/area-chart` | chart, tooltip, legend, dot, evil-brush, background |
+| `@beecharts/area-chart` | chart, tooltip, legend, dot, bee-brush, background |
 | `@beecharts/line-chart` | same as area |
-| `@beecharts/bar-chart` | chart, tooltip, legend, evil-brush, background |
-| `@beecharts/composed-chart` | chart, tooltip, legend, dot, evil-brush, background |
+| `@beecharts/bar-chart` | chart, tooltip, legend, bee-brush, background |
+| `@beecharts/composed-chart` | chart, tooltip, legend, dot, bee-brush, background |
 | `@beecharts/pie-chart` | chart, tooltip, legend, background |
 | `@beecharts/radial-chart` | chart, tooltip, legend, background |
 | `@beecharts/radar-chart` | chart, tooltip, legend, dot, background |
@@ -67,7 +67,7 @@ Installing a chart automatically adds its `registryDependencies`.
 | `@beecharts/legend` | If building custom legends |
 | `@beecharts/dot` | Custom dots outside bundled charts |
 | `@beecharts/background` | Custom backgrounds |
-| `@beecharts/evil-brush` | Standalone brush experiments |
+| `@beecharts/bee-brush` | Standalone brush experiments |
 
 ## Import paths (after install)
 

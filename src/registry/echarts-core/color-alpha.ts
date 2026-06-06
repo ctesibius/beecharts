@@ -32,7 +32,7 @@ export function withAlpha(color: string, alpha: number): string {
   return value;
 }
 
-/** Soft top-to-bottom fill for area series (matches evilcharts vertical fade). */
+/** Soft top-to-bottom fill for area series (matches beecharts vertical fade). */
 export function areaVerticalFill(color: string) {
   return {
     type: "linear" as const,
@@ -48,7 +48,7 @@ export function areaVerticalFill(color: string) {
   };
 }
 
-/** Matches evilcharts `DEFAULT_FILL_OPACITY` on filled radars. */
+/** Matches beecharts `DEFAULT_FILL_OPACITY` on filled radars. */
 export const RADAR_FILL_OPACITY = 0.3;
 
 type RadarGradientColor = {
@@ -107,7 +107,7 @@ function radarGradientColorStops(
   };
 }
 
-/** Radial fill for radar polygons — per-shape bbox (evilcharts FillGradient). */
+/** Radial fill for radar polygons — per-shape bbox (beecharts FillGradient). */
 export function radarRadialFill(color: string): RadarGradientColor {
   return radarGradientColorStops(() => color, 1);
 }
